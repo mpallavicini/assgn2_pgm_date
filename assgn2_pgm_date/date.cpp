@@ -1,7 +1,6 @@
 #include <iostream>
-#include <string>
-#include "date.h"
 #include <iomanip>
+#include "date.h"
 
 using namespace std;
 
@@ -103,7 +102,6 @@ void Date::setDay(unsigned d)
 	{
 		if ((myDay > 31) | (myDay < 1)) //test for day being 1-31; display error message if invalid
 		{
-			this->display(); //display the entered date
 			cout << myDay << " is an invalid day for this month." << endl;
 		}		
 	}
@@ -111,7 +109,6 @@ void Date::setDay(unsigned d)
 	{
 		if ((myDay > 30) | (myDay < 1)) //test for day being 1-30; display error message if invalid
 		{
-			this->display(); //display the entered date
 			cout << myDay << " is an invalid day for this month." << endl;
 		}
 	}
@@ -129,14 +126,13 @@ void Date::setDay(unsigned d)
 		{
 			if ((myDay > 28) | (myDay < 1)) //test for day being 1-29; display error message if invalid
 			{
-				this->display(); //display the entered date
 				cout << myDay << " is an invalid day for this month." << endl;
 			}
 		}
 	}
 	else
 	{
-		cout << "Month is invalid, therefore " << myDay << " is an invalid day." << endl;
+		cout << "Month is invalid, therefore validity of day " << myDay << " cannot be determined." << endl;
 	}
 }
 

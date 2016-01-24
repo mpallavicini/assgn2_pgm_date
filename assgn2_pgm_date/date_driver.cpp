@@ -6,12 +6,11 @@ Due Date: January 26, 2016	Due Time: 8:00pm
 Total Points: 100
 Assignment 3: Date program
 
-Description:
+Description: A program to demonstrate my understanding of object-oriented programming.
 
 **********************************************************************************************/
 
 #include <iostream>
-#include <string>
 #include "date.h"
 
 using namespace std;
@@ -48,14 +47,22 @@ int main()
 	Date test5Date(80, 40, 0000);
 	cout << endl;
 
+	//Demonstrate functionality of display()
+	yourDate.display();
+	cout << endl;
+
+	//Demonstrate functionality of getters
 	cout << yourDate.getMonth() << endl;
 	cout << yourDate.getDay() << endl;
 	cout << yourDate.getYear() << endl;
 
+	//Demonstrate functionality of setters
 	myDate.setMonth(11); 
 	myDate.setDay(12);
 	myDate.setYear(2015);
+	cout << endl;
 
+	//Demonstrate functionality of operator<< overloading
 	cout << "myDate: " << myDate << " test2Date: " << test2Date << " yourDate: " << yourDate << endl;
 
 	return 0;
