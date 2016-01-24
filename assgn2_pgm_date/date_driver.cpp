@@ -52,10 +52,11 @@ int main()
 	cout << yourDate.getDay() << endl;
 	cout << yourDate.getYear() << endl;
 
-	//myDate.setMonth(11); 
-	//myDate.setDay(12);
-	//myDate.setYear(2015);
-	//cout<<"myDate: "<<myDate<<" test2Date: "<<test2Date<<" yourDate: "<<yourDate<<endl;
+	myDate.setMonth(11); 
+	myDate.setDay(12);
+	myDate.setYear(2015);
+
+	cout << "myDate: " << myDate << " test2Date: " << test2Date << " yourDate: " << yourDate << endl;
 
 	return 0;
 

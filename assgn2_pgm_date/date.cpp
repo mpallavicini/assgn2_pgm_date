@@ -33,7 +33,7 @@ Date::Date(unsigned m, unsigned d, unsigned y)
 
 /**********************************************************************************************/
 //Name:				Display
-//Precondition:		The state of the object has been initalized to mm/dd/yyyy.
+//Precondition:		The state of the object has been initalized.
 //Postcondition:	The date is displayed on screen as mm/dd/yyyy with preceding 0s where necessary.
 //Description:		Displays the date as saved in the state of a Date object.
 void Date::display() const
@@ -43,40 +43,41 @@ void Date::display() const
 }
 
 /**********************************************************************************************/
-//Name:  getMonth
-//Precondition: 
-//Postcondition: 
-//Description:  
+//Name:				getMonth
+//Precondition:		The month of the object has been initalized.
+//Postcondition:	The month of the object is passed to the function call.
+//Description:		Retreives the month from the state of the object and returns it.
 int Date::getMonth() const
 {
 	return myMonth;
 }
 
 /**********************************************************************************************/
-//Name:  getDay
-//Precondition: 
-//Postcondition: 
-//Description:  
+//Name:				getDay
+//Precondition:		The day of the object has been initalized.
+//Postcondition:	The day of the object is passed to the function call.
+//Description:		Retrieves the day from the state of the object and returns it.
 int Date::getDay() const
 {
 	return myDay;
 }
 
 /**********************************************************************************************/
-//Name:  getYear
-//Precondition: 
-//Postcondition: 
-//Description:  
+//Name:				getYear
+//Precondition:		The year of the object has been initalized.
+//Postcondition:	The year of the object is passed to the function call.
+//Description:		Retrieves the day from the state of the object and returns it.
 int Date::getYear() const
 {
 	return myYear;
 }
 
 /**********************************************************************************************/
-//Name: setMonth
-//Precondition: 
-//Postcondition: 
-//Description:  
+//Name:				setMonth
+//Precondition:		The object has been declared.
+//Postcondition:	The month of the object is modified to the defined value.
+//Description:		Checks the validity of the specified month and stores it in the state of the object.
+//					Displays an error message if month is invalid (less than 1 or greater than 12).
 void Date::setMonth(unsigned m)
 {
 	myMonth = m;
@@ -88,10 +89,12 @@ void Date::setMonth(unsigned m)
 }
 
 /**********************************************************************************************/
-//Name:  setDay
-//Precondition: 
-//Postcondition: 
-//Description:  
+//Name:				setDay
+//Precondition:		The object has been declared.
+//Postcondition:	The day of the object is modified to the defined value.
+//Description:		Checks the validity of the specified day and stores it in the state of the object.
+//					Displays an error message if day is invalid per # of days in the specified month (including for leap years).
+//					Displays an error message if day cannot be validated because the month is invalid.
 void Date::setDay(unsigned d)
 {
 	myDay = d;
@@ -133,15 +136,16 @@ void Date::setDay(unsigned d)
 	}
 	else
 	{
-		cout << "Month is invalid, therefore validity of day " << myDay << " can't be determined." << endl;
+		cout << "Month is invalid, therefore " << myDay << " is an invalid day." << endl;
 	}
 }
 
 /**********************************************************************************************/
-//Name:  getYear
-//Precondition: 
-//Postcondition: 
-//Description:  
+//Name:				setYear
+//Precondition:		The object has been decalred.
+//Postcondition:	The year of the object is modified to the defined value.
+//Description:		Checks the validity of the specified year and stores it in the state of the object.
+//					Displays an error message if year is invalid (less than or equal to 0).
 void Date::setYear(unsigned y)
 {
 	myYear = y;
@@ -153,11 +157,13 @@ void Date::setYear(unsigned y)
 }
 
 /**********************************************************************************************/
+//Name:				operator<< overload
+//Precondition:		The object has been initalized.
+//Postcondition:	The date is displayed on screen as mm/dd/yyyy with preceding 0s where necessary.
+//Description:		Displays the date as saved in the state of a Date object.
 ostream & operator<<(ostream & out, const Date & dateObj)
 {
-
-
-
+	out << setfill('0'); //precede with 0s where necessary
+	out << setw(2) << dateObj.myMonth << "/" << setw(2) << dateObj.myDay << "/" << setw(4) << dateObj.myYear;
 	return out;
-
 }
