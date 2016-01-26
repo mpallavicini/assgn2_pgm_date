@@ -130,7 +130,7 @@ void Date::setDay(unsigned d)
 			}
 		}
 	}
-	else
+	else //if month is not 1-12
 	{
 		cout << "Month is invalid, therefore validity of day " << myDay << " cannot be determined." << endl;
 	}
